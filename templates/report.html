@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agriculture Advisory Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="title">
+            Autonomous Agriculture Advisory Report
+        </h1>
+
+        <div class="report-card">
+            {{ report|safe }}
+        </div>
+
+        <div class="button-section">
+            <a href="/download" class="btn">Download PDF</a>
+            <a href="/" class="btn secondary">Generate New Report</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html> 

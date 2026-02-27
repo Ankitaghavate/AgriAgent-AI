@@ -1,0 +1,266 @@
+============================================================
+SECTION: CENTRAL AGRICULTURE SCHEMES – GOVERNMENT OF INDIA
+============================================================
+
+SCHEME_NAME: Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)
+TYPE: Income Support
+APPLICABLE_STATES: All States and Union Territories
+APPLICABLE_CROPS: All Crops
+BENEFIT: ₹6000 per year in 3 installments
+ELIGIBILITY: Small and marginal farmers owning cultivable land
+DESCRIPTION:
+Provides direct income support to farmers to supplement financial needs for agricultural and domestic expenses.
+OFFICIAL_PORTAL: https://pmkisan.gov.in
+------------------------------------------------------------
+
+SCHEME_NAME: Pradhan Mantri Fasal Bima Yojana (PMFBY)
+TYPE: Crop Insurance
+APPLICABLE_STATES: All States (State Participation Based)
+APPLICABLE_CROPS: Notified Crops by State
+PREMIUM_RATES:
+Kharif Crops: 2%
+Rabi Crops: 1.5%
+Commercial/Horticulture Crops: 5%
+COVERAGE:
+Natural Calamities, Pest Attack, Crop Loss, Prevented Sowing
+DESCRIPTION:
+Provides financial support to farmers suffering crop loss or damage due to unforeseen events.
+------------------------------------------------------------
+
+SCHEME_NAME: Kisan Credit Card (KCC)
+TYPE: Agricultural Loan
+APPLICABLE_STATES: All States
+BENEFIT:
+Short-term credit up to ₹3 lakh
+Interest Subvention available
+DESCRIPTION:
+Provides farmers easy access to credit for crop production and allied activities.
+------------------------------------------------------------
+
+SCHEME_NAME: Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)
+TYPE: Irrigation & Water Management
+BENEFIT:
+Subsidy for drip irrigation, sprinkler systems, water conservation structures
+DESCRIPTION:
+Aims to improve water use efficiency and expand irrigation coverage.
+------------------------------------------------------------
+
+SCHEME_NAME: National Food Security Mission (NFSM)
+TYPE: Crop Productivity Enhancement
+TARGET_CROPS:
+Rice, Wheat, Pulses, Coarse Cereals, Oilseeds
+DESCRIPTION:
+Improves productivity through seed distribution, training, and subsidies.
+------------------------------------------------------------
+
+SCHEME_NAME: Paramparagat Krishi Vikas Yojana (PKVY)
+TYPE: Organic Farming Promotion
+BENEFIT:
+Financial assistance for organic inputs and certification
+DESCRIPTION:
+Encourages cluster-based organic farming practices.
+------------------------------------------------------------
+
+SCHEME_NAME: Agriculture Infrastructure Fund (AIF)
+TYPE: Infrastructure Loan
+BENEFIT:
+Interest subvention and credit guarantee support
+DESCRIPTION:
+Supports post-harvest infrastructure and community farming assets.
+------------------------------------------------------------
+
+SCHEME_NAME: e-NAM (National Agriculture Market)
+TYPE: Digital Market Platform
+BENEFIT:
+Online trading, better price discovery
+DESCRIPTION:
+Integrates APMC markets into unified digital platform.
+------------------------------------------------------------
+
+============================================================
+SECTION: MAJOR STATE-SPECIFIC SUPPORT (EXAMPLE TAGGING)
+============================================================
+
+STATE: Maharashtra
+AVAILABLE_SUPPORT:
+- Mukhyamantri Krishi Yantra Yojana (Equipment Subsidy)
+- Drip Irrigation Subsidy
+- Seed Subsidy Scheme
+- State Crop Insurance Add-on Support
+
+STATE: Karnataka
+AVAILABLE_SUPPORT:
+- Raitha Siri Scheme
+- State Horticulture Subsidy
+- Millets Promotion Scheme
+
+STATE: Punjab
+AVAILABLE_SUPPORT:
+- Paddy Diversification Incentives
+- Farm Mechanization Subsidy
+
+STATE: Tamil Nadu
+AVAILABLE_SUPPORT:
+- Uzhavar Pathukappu Scheme
+- Micro Irrigation Subsidy
+
+(All states can be expanded later without breaking structure)
+
+============================================================
+SECTION: INSURANCE & RISK MANAGEMENT
+============================================================
+
+INSURANCE_SCHEME: PMFBY
+INSURANCE_SCHEME: Weather Based Crop Insurance Scheme (WBCIS)
+INSURANCE_SCHEME: Livestock Insurance Scheme
+
+============================================================
+SECTION: LOAN & FINANCIAL ASSISTANCE
+============================================================
+
+LOAN_SCHEME: Kisan Credit Card (KCC)
+LOAN_SCHEME: NABARD Refinance
+LOAN_SCHEME: Agriculture Infrastructure Fund
+LOAN_SCHEME: Mudra Loan for Agri-Entrepreneurs
+
+============================================================
+SECTION: SUSTAINABILITY & GREEN PRACTICES
+============================================================
+
+PRACTICE: Integrated Pest Management (IPM)
+PRACTICE: Crop Rotation
+PRACTICE: Zero Budget Natural Farming
+PRACTICE: Drip Irrigation
+PRACTICE: Rainwater Harvesting
+PRACTICE: Organic Certification
+PRACTICE: Soil Health Testing
+
+============================================================
+SECTION: MAJOR CROPS IN INDIA (100+)
+============================================================
+
+CROPS:
+Rice
+Wheat
+Maize
+Bajra
+Jowar
+Barley
+Ragi
+Oats
+Soybean
+Groundnut
+Mustard
+Sunflower
+Cotton
+Sugarcane
+Tea
+Coffee
+Jute
+Turmeric
+Ginger
+Garlic
+Onion
+Potato
+Tomato
+Brinjal
+Chili
+Cabbage
+Cauliflower
+Carrot
+Radish
+Peas
+Beans
+Pumpkin
+Cucumber
+Bottle Gourd
+Bitter Gourd
+Ridge Gourd
+Watermelon
+Muskmelon
+Apple
+Mango
+Banana
+Papaya
+Guava
+Pomegranate
+Grapes
+Orange
+Lemon
+Sapota
+Custard Apple
+Jackfruit
+Coconut
+Arecanut
+Cashew
+Almond
+Pistachio
+Black Gram
+Green Gram
+Toor Dal
+Masoor
+Chickpea
+Horse Gram
+Cowpea
+Linseed
+Sesame
+Castor
+Safflower
+Millets
+Foxtail Millet
+Little Millet
+Kodo Millet
+Barnyard Millet
+Proso Millet
+Quinoa
+Buckwheat
+Tapioca
+Sweet Potato
+Yam
+Cluster Bean
+Fenugreek
+Coriander
+Cumin
+Fennel
+Cardamom
+Clove
+Cinnamon
+Black Pepper
+Nutmeg
+Vanilla
+Betel Leaf
+Floriculture Crops
+Medicinal Plants
+Aloe Vera
+Ashwagandha
+Stevia
+Tulsi
+Bamboo
+Moringa
+Dragon Fruit
+Strawberry
+Blueberry
+Kiwi
+Litchi
+Pineapple
+Fig
+Date Palm
+Sorghum
+Paddy
+Durum Wheat
+Hybrid Maize
+Organic Vegetables
+Protected Cultivation Crops
+Hydroponic Crops
+Fodder Crops
+Napier Grass
+Lucerne
+Silage Crops
+Oil Palm
+Rubber
+Indigo
+Tobacco
+
+============================================================
+END OF KNOWLEDGE BASE
+============================================================

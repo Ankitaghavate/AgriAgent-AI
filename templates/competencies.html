@@ -1,0 +1,337 @@
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluation des Compétences - AgriAgentAI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .competency-block {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .block-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .block-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        
+        .block-header h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        
+        .competency-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .competency-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .competency-item h4 {
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .rating {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .rating input[type="radio"] {
+            display: none;
+        }
+        
+        .rating label {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        
+        .rating input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            transform: scale(1.1);
+        }
+        
+        .rating label:hover {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto 0;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Évaluation des Compétences</h1>
+            <p>Auto-évaluez vos compétences techniques et transversales</p>
+        </div>
+        
+        <form id="competencyForm">
+            <div class="competency-block">
+                <div class="block-header">
+                    <div class="block-number">01</div>
+                    <h3>Auto-évaluation Globale</h3>
+                </div>
+                <div class="competency-grid">
+                    <div class="competency-item">
+                        <h4>Évaluation globale de vos compétences</h4>
+                        <div class="rating">
+                            <input type="radio" id="global-1" name="global" value="1"><label for="global-1">1</label>
+                            <input type="radio" id="global-2" name="global" value="2"><label for="global-2">2</label>
+                            <input type="radio" id="global-3" name="global" value="3"><label for="global-3">3</label>
+                            <input type="radio" id="global-4" name="global" value="4"><label for="global-4">4</label>
+                            <input type="radio" id="global-5" name="global" value="5"><label for="global-5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="competency-block">
+                <div class="block-header">
+                    <div class="block-number">02</div>
+                    <h3>Compétences Techniques</h3>
+                </div>
+                <div class="competency-grid">
+                    <div class="competency-item">
+                        <h4>Maîtrise des outils numériques</h4>
+                        <div class="rating">
+                            <input type="radio" id="tech1-1" name="tech1" value="1"><label for="tech1-1">1</label>
+                            <input type="radio" id="tech1-2" name="tech1" value="2"><label for="tech1-2">2</label>
+                            <input type="radio" id="tech1-3" name="tech1" value="3"><label for="tech1-3">3</label>
+                            <input type="radio" id="tech1-4" name="tech1" value="4"><label for="tech1-4">4</label>
+                            <input type="radio" id="tech1-5" name="tech1" value="5"><label for="tech1-5">5</label>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Analyse de données</h4>
+                        <div class="rating">
+                            <input type="radio" id="tech2-1" name="tech2" value="1"><label for="tech2-1">1</label>
+                            <input type="radio" id="tech2-2" name="tech2" value="2"><label for="tech2-2">2</label>
+                            <input type="radio" id="tech2-3" name="tech2" value="3"><label for="tech2-3">3</label>
+                            <input type="radio" id="tech2-4" name="tech2" value="4"><label for="tech2-4">4</label>
+                            <input type="radio" id="tech2-5" name="tech2" value="5"><label for="tech2-5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="competency-block">
+                <div class="block-header">
+                    <div class="block-number">03</div>
+                    <h3>Compétences Transversales</h3>
+                </div>
+                <div class="competency-grid">
+                    <div class="competency-item">
+                        <h4>Communication</h4>
+                        <div class="rating">
+                            <input type="radio" id="trans1-1" name="trans1" value="1"><label for="trans1-1">1</label>
+                            <input type="radio" id="trans1-2" name="trans1" value="2"><label for="trans1-2">2</label>
+                            <input type="radio" id="trans1-3" name="trans1" value="3"><label for="trans1-3">3</label>
+                            <input type="radio" id="trans1-4" name="trans1" value="4"><label for="trans1-4">4</label>
+                            <input type="radio" id="trans1-5" name="trans1" value="5"><label for="trans1-5">5</label>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Travail d'équipe</h4>
+                        <div class="rating">
+                            <input type="radio" id="trans2-1" name="trans2" value="1"><label for="trans2-1">1</label>
+                            <input type="radio" id="trans2-2" name="trans2" value="2"><label for="trans2-2">2</label>
+                            <input type="radio" id="trans2-3" name="trans2" value="3"><label for="trans2-3">3</label>
+                            <input type="radio" id="trans2-4" name="trans2" value="4"><label for="trans2-4">4</label>
+                            <input type="radio" id="trans2-5" name="trans2" value="5"><label for="trans2-5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="competency-block">
+                <div class="block-header">
+                    <div class="block-number">04</div>
+                    <h3>Gestion de Projet</h3>
+                </div>
+                <div class="competency-grid">
+                    <div class="competency-item">
+                        <h4>Planification</h4>
+                        <div class="rating">
+                            <input type="radio" id="proj1-1" name="proj1" value="1"><label for="proj1-1">1</label>
+                            <input type="radio" id="proj1-2" name="proj1" value="2"><label for="proj1-2">2</label>
+                            <input type="radio" id="proj1-3" name="proj1" value="3"><label for="proj1-3">3</label>
+                            <input type="radio" id="proj1-4" name="proj1" value="4"><label for="proj1-4">4</label>
+                            <input type="radio" id="proj1-5" name="proj1" value="5"><label for="proj1-5">5</label>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Gestion du temps</h4>
+                        <div class="rating">
+                            <input type="radio" id="proj2-1" name="proj2" value="1"><label for="proj2-1">1</label>
+                            <input type="radio" id="proj2-2" name="proj2" value="2"><label for="proj2-2">2</label>
+                            <input type="radio" id="proj2-3" name="proj2" value="3"><label for="proj2-3">3</label>
+                            <input type="radio" id="proj2-4" name="proj2" value="4"><label for="proj2-4">4</label>
+                            <input type="radio" id="proj2-5" name="proj2" value="5"><label for="proj2-5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="competency-block">
+                <div class="block-header">
+                    <div class="block-number">05</div>
+                    <h3>Résolution de Problèmes</h3>
+                </div>
+                <div class="competency-grid">
+                    <div class="competency-item">
+                        <h4>Analyse de problèmes complexes</h4>
+                        <div class="rating">
+                            <input type="radio" id="prob1-1" name="prob1" value="1"><label for="prob1-1">1</label>
+                            <input type="radio" id="prob1-2" name="prob1" value="2"><label for="prob1-2">2</label>
+                            <input type="radio" id="prob1-3" name="prob1" value="3"><label for="prob1-3">3</label>
+                            <input type="radio" id="prob1-4" name="prob1" value="4"><label for="prob1-4">4</label>
+                            <input type="radio" id="prob1-5" name="prob1" value="5"><label for="prob1-5">5</label>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Prise de décision</h4>
+                        <div class="rating">
+                            <input type="radio" id="prob2-1" name="prob2" value="1"><label for="prob2-1">1</label>
+                            <input type="radio" id="prob2-2" name="prob2" value="2"><label for="prob2-2">2</label>
+                            <input type="radio" id="prob2-3" name="prob2" value="3"><label for="prob2-3">3</label>
+                            <input type="radio" id="prob2-4" name="prob2" value="4"><label for="prob2-4">4</label>
+                            <input type="radio" id="prob2-5" name="prob2" value="5"><label for="prob2-5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="competency-block">
+                <div class="block-header">
+                    <div class="block-number">06</div>
+                    <h3>Adaptabilité</h3>
+                </div>
+                <div class="competency-grid">
+                    <div class="competency-item">
+                        <h4>Apprentissage continu</h4>
+                        <div class="rating">
+                            <input type="radio" id="adapt1-1" name="adapt1" value="1"><label for="adapt1-1">1</label>
+                            <input type="radio" id="adapt1-2" name="adapt1" value="2"><label for="adapt1-2">2</label>
+                            <input type="radio" id="adapt1-3" name="adapt1" value="3"><label for="adapt1-3">3</label>
+                            <input type="radio" id="adapt1-4" name="adapt1" value="4"><label for="adapt1-4">4</label>
+                            <input type="radio" id="adapt1-5" name="adapt1" value="5"><label for="adapt1-5">5</label>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Flexibilité</h4>
+                        <div class="rating">
+                            <input type="radio" id="adapt2-1" name="adapt2" value="1"><label for="adapt2-1">1</label>
+                            <input type="radio" id="adapt2-2" name="adapt2" value="2"><label for="adapt2-2">2</label>
+                            <input type="radio" id="adapt2-3" name="adapt2" value="3"><label for="adapt2-3">3</label>
+                            <input type="radio" id="adapt2-4" name="adapt2" value="4"><label for="adapt2-4">4</label>
+                            <input type="radio" id="adapt2-5" name="adapt2" value="5"><label for="adapt2-5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Soumettre l'évaluation</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('competencyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Évaluation soumise avec succès!');
+        });
+    </script>
+</body>
+</html>

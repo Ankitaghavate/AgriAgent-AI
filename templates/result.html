@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Advisory Report - AgriAgentAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <style>
+        /* Additional report-specific styles */
+        .report-content {
+            position: relative;
+        }
+        
+        .report-content h2 {
+            color: #1a3d2a;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4ade80;
+        }
+        
+        .report-content h3 {
+            color: #2d5a3d;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 1.25rem 0 0.75rem;
+        }
+        
+        .report-content strong {
+            color: #1a3d2a;
+        }
+        
+        .report-content em {
+            color: #4ade80;
+            font-style: normal;
+        }
+        
+        /* Parse markdown sections into cards */
+        .markdown-section {
+            display: none; /* Hidden by default, will be processed by JS */
+        }
+        
+        /* Score parsing from report text */
+        .score-from-text {
+            display: none;
+        }
+
+        .report-main-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #14532d;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #22c55e;
+    text-align: center;
+}
+
+    </style>
+</head>
+
+<body class="report-page">
+
+    <div class="container py-4">
+        
+        <!-- Official Header -->
+        <div class="report-header">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <div class="logo-icon">
+                        🌾
+                    </div>
+                </div>
+                <div class="col">
+                    <h1 class="report-title mb-2">
+                        Autonomous Sustainable Farming Policy & Subsidy Advisory Report
+                    </h1>
+                    <div class="d-flex align-items-center flex-wrap gap-3">
+                        <span class="ai-seal-badge">
+                            <i class="fas fa-robot"></i> AI Generated Advisory
+                        </span>
+                        <span class="report-date">
+                            <i class="fas fa-calendar-alt me-2"></i>
+                            Generated on: <span id="reportDate"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Farmer Profile Summary Box -->
+        <div class="profile-summary-box">
+            <h5><i class="fas fa-user-circle text-success"></i> Farmer Profile Summary</h5>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg">
+                    <div class="profile-item">
+                        <div class="icon"><i class="fas fa-wheat-awn"></i></div>
+                        <div>
+                            <div class="label">Crop</div>
+                            <div class="value">{{ user_input.get('crop_type', 'N/A') }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg">
+                    <div class="profile-item">
+                        <div class="icon"><i class="fas fa-map-pin"></i></div>
+                        <div>
+                            <div class="label">State</div>
+                            <div class="value">{{ user_input.get('state', 'N/A') }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg">
+                    <div class="profile-item">
+                        <div class="icon"><i class="fas fa-ruler-combined"></i></div>
+                        <div>
+                            <div class="label">Land Size</div>
+                            <div class="value">{{ user_input.get('land_size', 'N/A') }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg">
+                    <div class="profile-item">
+                        <div class="icon"><i class="fas fa-indian-rupee-sign"></i></div>
+                        <div>
+                            <div class="label">Income</div>
+                            <div class="value">{{ user_input.get('income_level', 'N/A') }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg">
+                    <div class="profile-item">
+                        <div class="icon"><i class="fas fa-tractor"></i></div>
+                        <div>
+                            <div class="label">Farming Type</div>
+                            <div class="value">{{ user_input.get('farming_type', 'N/A') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Content -->
+        <div class="report-content" id="reportContent">
+            {{ report|safe }}
+        </div>
+
+        <!-- Advisory Score Section -->
+        <div class="advisory-score-section" id="advisoryScoreSection">
+            <div class="score-circle" id="scoreCircle">
+                <div>
+                    <div class="score-value" id="scoreValue">--</div>
+                    <div class="score-label">Score</div>
+                </div>
+            </div>
+            <h3><i class="fas fa-clipboard-check me-2"></i>Final Advisory Score</h3>
+            <p class="mt-2 mb-0" id="scoreDescription">Analyzing your advisory report...</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="/download" class="btn btn-download">
+                <i class="fas fa-download"></i> Download PDF
+            </a>
+            <a href="/" class="btn btn-new">
+                <i class="fas fa-plus-circle"></i> Generate New Report
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="report-footer">
+            <div class="report-footer-content">
+                <h5><i class="fas fa-shield-alt me-2"></i>Confidential Advisory</h5>
+                <p>This is an official advisory generated by the <strong>Autonomous Sustainable Farming Policy & Subsidy Decision System</strong>.</p>
+                <p>This report is generated using AI and should be used as a guideline. Please verify all information with relevant government departments before applying for any schemes or subsidies.</p>
+                <div class="footer-timestamp">
+                    <i class="fas fa-clock me-2"></i>
+                    Report Generated: <span id="timestamp"></span> | System Version 2.0
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current date and timestamp
+        const now = new Date();
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        
+        document.getElementById('reportDate').textContent = now.toLocaleDateString('en-US', dateOptions);
+        document.getElementById('timestamp').textContent = now.toLocaleString('en-US', { ...dateOptions, ...timeOptions });
+
+        // Parse the report content and restructure it into cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const reportContent = document.getElementById('reportContent');
+            const originalContent = reportContent.innerHTML;
+            
+            // Create a temporary container to parse HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = originalContent;
+            
+            // Find all h2, h3, ul, ol, p elements and organize them
+            const sections = [];
+            let currentSection = null;
+            
+            // Process the content
+            const elements = tempDiv.querySelectorAll('h2, h3, p, ul, ol, li');
+            
+            let isFirstHeading = true;
+
+            elements.forEach(el => {
+                if (el.tagName === 'H2') {
+
+                    // First H2 becomes main document title
+                    if (isFirstHeading) {
+                        structuredHTML += `
+                <div class="report-main-title">
+                    ${el.textContent.trim()}
+                </div>
+            `;
+                        isFirstHeading = false;
+                        return;
+                    }
+
+                    if (currentSection) sections.push(currentSection);
+
+                    currentSection = {
+                        title: el.textContent.trim(),
+                        level: 'h2',
+                        content: []
+                    };
+
+                } else if (el.tagName === 'H3' && currentSection) {
+
+                    currentSection.content.push({
+                        type: 'h3',
+                        text: el.textContent.trim()
+                    });
+
+                } else if (currentSection) {
+
+                    if (el.tagName === 'P' || el.tagName === 'UL' || el.tagName === 'OL') {
+                        currentSection.content.push({
+                            type: el.tagName.toLowerCase(),
+                            html: el.innerHTML
+                        });
+                    }
+                }
+            });
+            
+            if (currentSection) sections.push(currentSection);
+
+            // Build structured HTML
+            let structuredHTML = '';
+            
+            sections.forEach(section => {
+                const sectionClass = getSectionClass(section.title);
+                const icon = getSectionIcon(section.title);
+                
+                structuredHTML += `
+                    <div class="report-section">
+                        <div class="section-icon ${sectionClass}">
+                            <i class="${icon}"></i>
+                        </div>
+                        <h3>${section.title}</h3>
+                `;
+                
+                section.content.forEach(item => {
+                    if (item.type === 'h3') {
+                        structuredHTML += `<h4>${item.text}</h4>`;
+                    } else if (item.type === 'p') {
+                        structuredHTML += `<p>${item.html}</p>`;
+                    } else if (item.type === 'ul' || item.type === 'ol') {
+                        structuredHTML += item.html;
+                    }
+                });
+                
+                structuredHTML += `</div>`;
+            });
+
+            // Only replace if we found structured content
+            if (sections.length > 0) {
+                reportContent.innerHTML = structuredHTML;
+            }
+
+            // Extract and display score
+            extractAndDisplayScore();
+        });
+
+        function getSectionClass(title) {
+            const titleLower = title.toLowerCase();
+            if (titleLower.includes('scheme')) return 'schemes';
+            if (titleLower.includes('subsidy')) return 'subsidies';
+            if (titleLower.includes('insurance')) return 'insurance';
+            if (titleLower.includes('loan') || titleLower.includes('financial')) return 'loans';
+            if (titleLower.includes('sustain')) return 'sustainability';
+            if (titleLower.includes('skill') || titleLower.includes('training')) return 'skills';
+            if (titleLower.includes('executive') || titleLower.includes('summary')) return 'executive';
+            return 'executive';
+        }
+
+        function getSectionIcon(title) {
+            const titleLower = title.toLowerCase();
+            if (titleLower.includes('scheme')) return 'fas fa-flag';
+            if (titleLower.includes('subsidy')) return 'fas fa-hand-holding-dollar';
+            if (titleLower.includes('insurance')) return 'fas fa-shield-heart';
+            if (titleLower.includes('loan') || titleLower.includes('financial')) return 'fas fa-money-bill-wave';
+            if (titleLower.includes('sustain')) return 'fas fa-leaf';
+            if (titleLower.includes('skill') || titleLower.includes('training')) return 'fas fa-graduation-cap';
+            if (titleLower.includes('executive') || titleLower.includes('summary')) return 'fas fa-file-alt';
+            return 'fas fa-info-circle';
+        }
+
+        function extractAndDisplayScore() {
+            const reportContent = document.getElementById('reportContent');
+            const text = reportContent.textContent;
+            
+            // Try to find score patterns
+            let score = null;
+            
+            // Pattern 1: "Score: XX" or "Advisory Score: XX"
+            const scoreMatch = text.match(/(?:advisory\s+)?score[:\s]+(\d{1,3})/i);
+            if (scoreMatch) {
+                score = parseInt(scoreMatch[1]);
+            }
+            
+            // Pattern 2: "XX/100" or "XX out of 100"
+            const outOfMatch = text.match(/(\d{1,3})\s*(?:\/\s*100|out\s+of\s+100)/i);
+            if (outOfMatch && !score) {
+                score = parseInt(outOfMatch[1]);
+            }
+            
+            // Pattern 3: Find percentage
+            const percentMatch = text.match(/(\d{1,3})%/);
+            if (percentMatch && !score) {
+                const potentialScore = parseInt(percentMatch[1]);
+                if (potentialScore >= 1 && potentialScore <= 100) {
+                    score = potentialScore;
+                }
+            }
+            
+            // Set default score if not found
+            if (!score || score < 0 || score > 100) {
+                score = 75; // Default score
+            }
+            
+            // Update score display
+            const scoreValue = document.getElementById('scoreValue');
+            const scoreCircle = document.getElementById('scoreCircle');
+            const scoreDesc = document.getElementById('scoreDescription');
+            
+            scoreValue.textContent = score;
+            
+            // Set color based on score
+            scoreCircle.classList.remove('excellent', 'good', 'poor');
+            
+            if (score >= 70) {
+                scoreCircle.classList.add('excellent');
+                scoreDesc.textContent = 'Excellent! Your farming practices are highly sustainable.';
+            } else if (score >= 50) {
+                scoreCircle.classList.add('good');
+                scoreDesc.textContent = 'Good. There is room for improvement in your farming practices.';
+            } else {
+                scoreCircle.classList.add('poor');
+                scoreDesc.textContent = 'Needs attention. We recommend following the advisory suggestions.';
+            }
+        }
+    </script>
+</body>
+
+</html>

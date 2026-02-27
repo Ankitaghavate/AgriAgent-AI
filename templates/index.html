@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriAgentAI 🌱 - Smart AI Solutions for Modern Agriculture</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- ======= Sticky Navbar ======= -->
+    <header class="navbar-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3" href="#">
+                    <i class="fas fa-leaf me-2"></i>AgriAgentAI 🌱
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="#ai-agents">AI Agents</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <!-- <li class="nav-item ms-lg-3">
+                            <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="#profile">Login</a>
+                        </li> -->
+                        <li class="nav-item ms-2">
+                            <a class="btn btn-success btn-sm rounded-pill px-3" href="#profile">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero-section d-flex align-items-center justify-content-center position-relative">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles"></div>
+        <div class="container position-relative z-index-2">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <!-- <span class="hero-badge mb-4 d-inline-block">🚀 Powered by AI & RAG Technology</span> -->
+                    <h1 class="hero-title fw-bold mb-4">
+                        Smart AI Solutions for <span class="text-gradient">Modern Agriculture</span>
+                    </h1>
+                    <p class="hero-subtitle lead mb-5">
+                        Harness the power of <strong>Artificial Intelligence</strong>, <strong>RAG</strong>, and 
+                        <strong>Multi-Agent Systems</strong> to transform your farming operations. 
+                        Get intelligent crop recommendations, weather insights, disease detection, and more.
+                    </p>
+                    <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">
+                        <a href="#profile" class="btn btn-primary btn-lg rounded-pill px-4 py-3">
+                            <i class="fas fa-rocket me-2"></i>Get Started
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- ======= AI Agents Section ======= -->
+    <section id="ai-agents" class="ai-agents-section py-6">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-tag">Meet Our AI Agents</span>
+                <h2 class="section-title fw-bold mt-3">Intelligent Multi-Agent System</h2>
+                <p class="section-subtitle">Our specialized AI agents work together to provide comprehensive agricultural support</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="agent-card">
+                        <div class="agent-image">
+                            <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop" alt="Master Agent">
+                            <div class="agent-overlay"></div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="agent-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h4>Master Agent</h4>
+                            <p>Orchestrates all AI operations and coordinates between specialized agents</p>
+                            <span class="agent-badge">Coordinator</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="agent-card">
+                        <div class="agent-image">
+                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop" alt="Profiling Agent">
+                            <div class="agent-overlay"></div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="agent-icon">
+                                <i class="fas fa-user-astronaut"></i>
+                            </div>
+                            <h4>Profiling Agent</h4>
+                            <p>Analyzes farmer profiles and creates personalized recommendations</p>
+                            <span class="agent-badge">Personalization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="agent-card">
+                        <div class="agent-image">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=300&fit=crop" alt="Query Agent">
+                            <div class="agent-overlay"></div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="agent-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>Query Agent</h4>
+                            <p>Handles natural language queries and provides instant responses</p>
+                            <span class="agent-badge">Communication</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="agent-card">
+                        <div class="agent-image">
+                            <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop" alt="Subsidy Agent">
+                            <div class="agent-overlay"></div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="agent-icon">
+                                <i class="fas fa-hand-holding-dollar"></i>
+                            </div>
+                            <h4>Subsidy Agent</h4>
+                            <p>Identifies eligible government schemes and subsidies for farmers</p>
+                            <span class="agent-badge">Financial Aid</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="agent-card">
+                        <div class="agent-image">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop" alt="Insurance Agent">
+                            <div class="agent-overlay"></div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="agent-icon">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <h4>Insurance Agent</h4>
+                            <p>Provides crop insurance guidance and claim assistance</p>
+                            <span class="agent-badge">Protection</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="agent-card">
+                        <div class="agent-image">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop" alt="Sustainability Agent">
+                            <div class="agent-overlay"></div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="agent-icon">
+                                <i class="fas fa-earth-americas"></i>
+                            </div>
+                            <h4>Sustainability Agent</h4>
+                            <p>Promotes eco-friendly practices and sustainable farming methods</p>
+                            <span class="agent-badge">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <!-- ======= Image Gallery Section ======= -->
+    <section id="gallery" class="gallery-section py-6">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-tag">Our Gallery</span>
+                <h2 class="section-title fw-bold mt-3">Smart Farming in Action</h2>
+                <p class="section-subtitle">Witness the future of agriculture through our lens</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-item-1">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop" alt="Smart Farming">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-tractor"></i>
+                        <span>Smart Farming</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-2">
+                    <img src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=600&h=400&fit=crop" alt="Drone Agriculture">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-drone"></i>
+                        <span>Drone Monitoring</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-3">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&h=400&fit=crop" alt="Crop Monitoring">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-eye"></i>
+                        <span>Crop Analysis</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-4">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=400&fit=crop" alt="Farm Technology">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-mobile-screen"></i>
+                        <span>Farm Tech</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-5">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=400&fit=crop" alt="Green Fields">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-seedling"></i>
+                        <span>Green Fields</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-6">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=400&fit=crop" alt="Harvest Time">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-sun"></i>
+                        <span>Harvest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-section py-6">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="about-image-wrapper position-relative">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop" 
+                             class="img-fluid rounded-4 shadow-lg" alt="About AgriAgentAI">
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title fw-bold mt-3 mb-4">Revolutionizing Agriculture with <span class="text-gradient">AI Technology</span></h2>
+                    <p class="about-text mb-4">
+                        <strong>AgriAgentAI</strong> is a cutting-edge platform that combines the power of 
+                        <strong>Artificial Intelligence</strong>, <strong>RAG (Retrieval-Augmented Generation)</strong>, 
+                        and <strong>Multi-Agent Systems</strong> to provide comprehensive agricultural solutions.
+                    </p>
+                    <p class="about-text mb-4">
+                        Built on a robust <strong>Flask</strong> backend, our platform delivers real-time insights, 
+                        personalized recommendations, and intelligent automation for modern farmers.
+                    </p>
+                    <div class="tech-features">
+                        <div class="tech-feature-item">
+                            <div class="tech-icon"><i class="fas fa-brain"></i></div>
+                            <div class="tech-content">
+                                <h5>AI & Machine Learning</h5>
+                                <p>Advanced algorithms for predictive analytics</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature-item">
+                            <div class="tech-icon"><i class="fas fa-database"></i></div>
+                            <div class="tech-content">
+                                <h5>RAG System</h5>
+                                <p>Retrieval-augmented generation for accurate responses</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature-item">
+                            <div class="tech-icon"><i class="fas fa-users-gear"></i></div>
+                            <div class="tech-content">
+                                <h5>Multi-Agent Architecture</h5>
+                                <p>Collaborative AI agents for specialized tasks</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature-item">
+                            <div class="tech-icon"><i class="fas fa-server"></i></div>
+                            <div class="tech-content">
+                                <h5>Flask Backend</h5>
+                                <p>Lightweight and scalable server infrastructure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact-section py-6">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title fw-bold mt-3">Contact Us</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card">
+                        <div class="row">
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <div class="contact-info">
+                                    <h4 class="mb-4">Let's Connect</h4>
+                                    <p class="contact-desc mb-4">Reach out to our team for any inquiries about our AI-powered agricultural solutions.</p>
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <span class="d-block fw-semibold">Email</span>
+                                            <small>support@agriagent.ai</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <div>
+                                            <span class="d-block fw-semibold">Phone</span>
+                                            <small>+91 8766985145</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-location-dot"></i>
+                                        </div>
+                                        <div>
+                                            <span class="d-block fw-semibold">Location</span>
+                                            <small>India</small>
+                                        </div>
+                                    </div>
+                                    <div class="social-links mt-4">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <form class="contact-form">
+                                    <div class="mb-3">
+                                        <label class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" placeholder="Ankita Ghavate">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" placeholder="ghavateankita@.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Message</label>
+                                        <textarea class="form-control" rows="4" placeholder="Your message..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-submit w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Profile / Account Section ======= -->
+    <section id="profile" class="profile-section py-6">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-tag">Get Started</span>
+                <h2 class="section-title fw-bold mt-3">Generate Your Agricultural Report</h2>
+                <p class="section-subtitle">Fill in your details and let our AI analyze your farm data</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <form id="advisoryForm" class="profile-form p-5">
+                        <div class="mb-4">
+                            <label for="crop_type" class="form-label">
+                                <i class="fas fa-wheat-awn me-2"></i>Crop Type
+                            </label>
+                            <input type="text" class="form-control" id="crop_type" name="crop_type" required 
+                                   placeholder="e.g., Rice, Wheat, Cotton">
+                        </div>
+                        <div class="mb-4">
+                            <label for="state" class="form-label">
+                                <i class="fas fa-map-pin me-2"></i>State
+                            </label>
+                            <input type="text" class="form-control" id="state" name="state" required 
+                                   placeholder="e.g., Tamil Nadu, Maharashtra">
+                        </div>
+                        <div class="mb-4">
+                            <label for="land_size" class="form-label">
+                                <i class="fas fa-ruler-combined me-2"></i>Land Size
+                            </label>
+                            <input type="text" class="form-control" id="land_size" name="land_size" required 
+                                   placeholder="e.g., 5 acres">
+                        </div>
+                        <div class="mb-4">
+                            <label for="income_level" class="form-label">
+                                <i class="fas fa-indian-rupee-sign me-2"></i>Income Level
+                            </label>
+                            <input type="text" class="form-control" id="income_level" name="income_level" required 
+                                   placeholder="e.g., 2-5 lakhs">
+                        </div>
+                        <div class="mb-4">
+                            <label for="farming_type" class="form-label">
+                                <i class="fas fa-tractor me-2"></i>Farming Type
+                            </label>
+                            <input type="text" class="form-control" id="farming_type" name="farming_type" required 
+                                   placeholder="e.g., Organic, Traditional">
+                        </div>
+                        <button type="submit" class="btn btn-submit w-100 btn-lg" id="generateBtn">
+                            <i class="fas fa-file-waveform me-2"></i>Generate Report ✨
+                        </button>
+                    </form>
+                    <!-- ======= Chatbot UI ======= -->
+                    <div id="chatbot-container">
+                        <div id="chatbot-header">
+                            <span>AgriAgentAI Chat 🌱</span>
+                            <button id="chatbot-toggle" class="btn btn-sm btn-light">&times;</button>
+                        </div>
+                        <div id="chatbot-messages"></div>
+                        <div id="chatbot-input-container">
+                            <input type="text" id="chatbot-input" placeholder="Ask anything about your farm...">
+                            <button id="chatbot-send">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Add this BELOW the form in the Profile / Account Section -->
+    <div id="reportResult" class="mt-5 p-4 border rounded-3 bg-light d-none">
+        <h4>AI Advisory Report 🌾</h4>
+        <pre id="reportContent" class="mb-0"></pre>
+    </div>
+
+    <!-- Loading Modal -->
+    <div class="modal fade" id="loadingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body text-center p-5">
+                    <div class="loading-container">
+                        <div class="loading-spinner">
+                            <div class="spinner-grow text-success" role="status" style="width: 4rem; height: 4rem;">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="loading-text mt-4">
+                            <h3 class="text-white fw-bold">Generating Advisory Report...</h3>
+                            <p class="text-white-50">Our AI agents are analyzing your farm data</p>
+                        </div>
+                        <div class="loading-progress mt-4">
+                            <div class="progress" style="height: 8px; max-width: 300px; margin: 0 auto;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
+                                     role="progressbar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="loading-steps mt-3">
+                            <div class="d-flex justify-content-center flex-wrap gap-3">
+                                <span class="badge bg-white text-success px-3 py-2">
+                                    <i class="fas fa-user me-1"></i> Profiling
+                                </span>
+                                <span class="badge bg-white text-success px-3 py-2">
+                                    <i class="fas fa-search me-1"></i> Analyzing
+                                </span>
+                                <span class="badge bg-white text-success px-3 py-2">
+                                    <i class="fas fa-lightbulb me-1"></i> Advising
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Footer ======= -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <a class="navbar-brand fw-bold fs-4" href="#">
+                            <i class="fas fa-leaf me-2"></i>AgriAgentAI 🌱
+                        </a>
+                        <p class="footer-desc mt-3">
+                            Empowering modern agriculture with cutting-edge AI technology. 
+                            Smart solutions for smarter farming.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#ai-agents">AI Agents</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Crop Advisory</a></li>
+                        <li><a href="#">Weather Alerts</a></li>
+                        <li><a href="#">Disease Detection</a></li>
+                        <li><a href="#">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Newsletter</h5>
+                    <p class="footer-desc">Subscribe to get the latest updates on agricultural AI</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-subscribe" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5 pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; 2026 AgriAgentAI. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">Built with <i class="fas fa-heart text-danger"></i> and AI 🌱</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
