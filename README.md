@@ -5,7 +5,7 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap&logoColor=white)
 ![OpenRouter API](https://img.shields.io/badge/OpenRouter-API-orange)
 ![SERP API](https://img.shields.io/badge/SERP-API-red)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)]
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
 
@@ -70,51 +70,72 @@ With structured farm inputs and a **knowledge base of 100+ crops and schemes**, 
    ```bash
    git clone https://github.com/yourusername/AgriAgentAI.git
    cd AgriAgentAI
-Create a virtual environment
+   ```
 
-```bash
-python -m venv venv
-Activate the virtual environment
-```
-Windows:
+2. **Create a virtual environment**
+   ```bash
+   python -m venv venv
+   ```
 
-```bash
-venv\Scripts\activate
-```
+3. **Activate the virtual environment**
+   
+   **Windows:**
+   ```bash
+   venv\Scripts\activate
+   ```
+   
+   **macOS/Linux:**
+   ```bash
+   source venv/bin/activate
+   ```
 
-macOS/Linux:
+4. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-source venv/bin/activate
-Install dependencies
-```
+5. **Set up environment variables**
+   
+   **Windows (Command Prompt):**
+   ```bash
+   set OPENROUTER_API_KEY=your_openrouter_api_key
+   set SERP_API_KEY=your_serp_api_key
+   ```
+   
+   **Windows (PowerShell):**
+   ```bash
+   $env:OPENROUTER_API_KEY="your_openrouter_api_key"
+   $env:SERP_API_KEY="your_serp_api_key"
+   ```
+   
+   **macOS/Linux:**
+   ```bash
+   export OPENROUTER_API_KEY="your_openrouter_api_key"
+   export SERP_API_KEY="your_serp_api_key"
+   ```
 
-```bash
-pip install -r requirements.txt
-Set up environment variables
-```
-Windows (Command Prompt):
+6. **Run the application**
+   ```bash
+   python app.py
+   ```
 
-```bash
-set OPENROUTER_API_KEY=your_openrouter_api_key
-set SERP_API_KEY=your_serp_api_key
-```
-Windows (PowerShell):
+7. **Access the web interface**
+   
+   Open your browser and visit: `http://localhost:5000` 🌐
 
-```bash
-$env:OPENROUTER_API_KEY="your_openrouter_api_key"
-$env:SERP_API_KEY="your_serp_api_key"
-```
-macOS/Linux:
+---
 
-```bash
-export OPENROUTER_API_KEY="your_openrouter_api_key"
-export SERP_API_KEY="your_serp_api_key"
-Run the application
-```
-```bash
-python app.py
-Access the web interface
-```
-Open your browser and visit: http://localhost:5000 🌐
+## 📋 How It Works
 
+1. **Farmer Registration** – Farmer enters details (land size, location, crops, soil type, etc.)
+2. **Profile Analysis** – Profiling Agent processes the information
+3. **Multi-Agent Processing** – Specialized agents analyze different aspects:
+   - **Subsidy Agent** checks eligible government schemes
+   - **Insurance Agent** evaluates crop insurance options
+   - **Financial Agent** identifies loan opportunities
+   - **Sustainability Agent** recommends eco-friendly practices
+   - **Climate Agent** assesses weather-related risks
+4. **Report Generation** – Master Agent compiles all insights into a comprehensive PDF report
+5. **Interactive Q&A** – Farmers can ask follow-up questions to the RAG-powered chatbot
+
+---
