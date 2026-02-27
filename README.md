@@ -5,7 +5,7 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap&logoColor=white)
 ![OpenRouter API](https://img.shields.io/badge/OpenRouter-API-orange)
 ![SERP API](https://img.shields.io/badge/SERP-API-red)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)]
 
 ---
 
@@ -72,86 +72,49 @@ With structured farm inputs and a **knowledge base of 100+ crops and schemes**, 
    cd AgriAgentAI
 Create a virtual environment
 
-bash
+```bash
 python -m venv venv
 Activate the virtual environment
-
+```
 Windows:
 
-bash
+```bash
 venv\Scripts\activate
+```
+
 macOS/Linux:
 
-bash
+```bash
 source venv/bin/activate
 Install dependencies
+```
 
-bash
+```bash
 pip install -r requirements.txt
 Set up environment variables
-
+```
 Windows (Command Prompt):
 
-bash
+```bash
 set OPENROUTER_API_KEY=your_openrouter_api_key
 set SERP_API_KEY=your_serp_api_key
+```
 Windows (PowerShell):
 
-bash
+```bash
 $env:OPENROUTER_API_KEY="your_openrouter_api_key"
 $env:SERP_API_KEY="your_serp_api_key"
+```
 macOS/Linux:
 
-bash
+```bash
 export OPENROUTER_API_KEY="your_openrouter_api_key"
 export SERP_API_KEY="your_serp_api_key"
 Run the application
-
-bash
+```
+```bash
 python app.py
 Access the web interface
-
+```
 Open your browser and visit: http://localhost:5000 🌐
 
-📋 How It Works
-Farmer Registration – Farmer enters details (land size, location, crops, soil type, etc.)
-
-Profile Analysis – Profiling Agent processes the information
-
-Multi-Agent Processing – Specialized agents analyze different aspects:
-
-Subsidy Agent checks eligible government schemes
-
-Insurance Agent evaluates crop insurance options
-
-Financial Agent identifies loan opportunities
-
-Sustainability Agent recommends eco-friendly practices
-
-Climate Agent assesses weather-related risks
-
-Report Generation – Master Agent compiles all insights into a comprehensive PDF report
-
-Interactive Q&A – Farmers can ask follow-up questions to the RAG-powered chatbot
-
-🗂️ Sample Output
-Advisory Report Contents
-After submitting your profile, AgriAgent AI generates a comprehensive advisory report (available as PDF) that includes:
-
-Section	Description
-📝 Farmer Summary	Personalized overview of your farm profile
-💰 Eligible Subsidies	Detailed list of government schemes you can apply for, with eligibility criteria and application process
-🛡️ Insurance Recommendations	Crop insurance options tailored to your location and crop type, with premium estimates
-💳 Financial Assistance	Suitable loan schemes, interest rates, and financial support programs
-🌱 Sustainability Plan	Actionable steps for sustainable farming and potential carbon credit earnings
-🌦️ Climate Risk Assessment	Analysis of climate-related risks and mitigation strategies
-Chatbot Interaction Examples
-"How do I apply for the PMFBY scheme in my state?"
-
-"What are the best drought-resistant crops for my region?"
-
-"Tell me more about the Kisan Credit Card loan benefits."
-
-"What sustainable practices can help me earn carbon credits?"
-
-📁 Project Struct
