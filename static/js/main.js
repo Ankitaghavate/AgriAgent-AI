@@ -124,77 +124,77 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.getElementById("advisoryForm").addEventListener("submit", async function(e) {
-    e.preventDefault(); // prevent page reload
-    const generateBtn = document.getElementById("generateBtn");
-    generateBtn.disabled = true;
-    generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Generating...';
+// document.getElementById("advisoryForm").addEventListener("submit", async function(e) {
+//     e.preventDefault(); // prevent page reload
+//     const generateBtn = document.getElementById("generateBtn");
+//     generateBtn.disabled = true;
+//     generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Generating...';
 
-    // Collect form data
-    const formData = {
-        crop_type: document.getElementById("crop_type").value,
-        state: document.getElementById("state").value,
-        land_size: document.getElementById("land_size").value,
-        income_level: document.getElementById("income_level").value,
-        farming_type: document.getElementById("farming_type").value
-    };
+//     // Collect form data
+//     const formData = {
+//         crop_type: document.getElementById("crop_type").value,
+//         state: document.getElementById("state").value,
+//         land_size: document.getElementById("land_size").value,
+//         income_level: document.getElementById("income_level").value,
+//         farming_type: document.getElementById("farming_type").value
+//     };
 
-    try {
-        const res = await fetch("/generate_report", {  // Flask route we will create
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(formData)
-        });
-        const data = await res.json();
+//     try {
+//         const res = await fetch("/generate_report", {  // Flask route we will create
+//             method: "POST",
+//             headers: {"Content-Type": "application/json"},
+//             body: JSON.stringify(formData)
+//         });
+//         const data = await res.json();
 
-        // Show the report
-        const reportDiv = document.getElementById("reportResult");
-        const reportContent = document.getElementById("reportContent");
-        reportContent.textContent = data.report; // server returns JSON {report: "..."}
-        reportDiv.classList.remove("d-none");
+//         // Show the report
+//         const reportDiv = document.getElementById("reportResult");
+//         const reportContent = document.getElementById("reportContent");
+//         reportContent.textContent = data.report; // server returns JSON {report: "..."}
+//         reportDiv.classList.remove("d-none");
 
-    } catch (err) {
-        alert("Error generating report: " + err.message);
-    } finally {
-        generateBtn.disabled = false;
-        generateBtn.innerHTML = '<i class="fas fa-file-waveform me-2"></i>Generate Report ✨';
-    }
-});
-document.getElementById('advisoryForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+//     } catch (err) {
+//         alert("Error generating report: " + err.message);
+//     } finally {
+//         generateBtn.disabled = false;
+//         generateBtn.innerHTML = '<i class="fas fa-file-waveform me-2"></i>Generate Report ✨';
+//     }
+// });
+// document.getElementById('advisoryForm').addEventListener('submit', async function(e) {
+//     e.preventDefault();
 
-    // Show loading modal
-    var loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
-    loadingModal.show();
+//     // Show loading modal
+//     var loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+//     loadingModal.show();
 
-    // Collect form data
-    const formData = {
-        crop_type: document.getElementById('crop_type').value,
-        state: document.getElementById('state').value,
-        land_size: document.getElementById('land_size').value,
-        income_level: document.getElementById('income_level').value,
-        farming_type: document.getElementById('farming_type').value
-    };
+//     // Collect form data
+//     const formData = {
+//         crop_type: document.getElementById('crop_type').value,
+//         state: document.getElementById('state').value,
+//         land_size: document.getElementById('land_size').value,
+//         income_level: document.getElementById('income_level').value,
+//         farming_type: document.getElementById('farming_type').value
+//     };
 
-    try {
-        // Call your backend API for generating the report
-        const response = await fetch('/generate_report', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(formData)
-        });
+//     try {
+//         // Call your backend API for generating the report
+//         const response = await fetch('/generate_report', {
+//             method: 'POST',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify(formData)
+//         });
 
-        const result = await response.json();
+//         const result = await response.json();
 
-        // Hide loading modal
-        loadingModal.hide();
+//         // Hide loading modal
+//         loadingModal.hide();
 
-        // Show report (you can use a modal, alert, or render on the page)
-        alert('Report Generated: ' + JSON.stringify(result));
+//         // Show report (you can use a modal, alert, or render on the page)
+//         alert('Report Generated: ' + JSON.stringify(result));
 
-    } catch (error) {
-        loadingModal.hide();
-        alert('Error generating report. Please try again.');
-        console.error(error);
-    }
-});
+//     } catch (error) {
+//         loadingModal.hide();
+//         alert('Error generating report. Please try again.');
+//         console.error(error);
+//     }
+// });
