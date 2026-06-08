@@ -139,3 +139,30 @@ With structured farm inputs and a **knowledge base of 100+ crops and schemes**, 
 5. **Interactive Q&A** – Farmers can ask follow-up questions to the RAG-powered chatbot
 
 ---
+
+## 🏗️ System Architecture
+
+<p align="center">
+  <img width="100%" alt="AgriAgent AI Architecture" src="https://github.com/user-attachments/assets/ee2408e7-aab2-4d06-8d3c-cdd9ee798d2a" />
+</p>
+
+---
+
+## 🌱 Future Enhancements
+
+- 🌦️ Real-time weather forecasting and climate risk alerts
+- 📈 Market price prediction using Machine Learning
+- 🦠 Crop disease detection using Computer Vision and Deep Learning
+- 🌐 Multi-language support for regional farmers
+- 📱 Android and iOS mobile application deployment
+- 🏛️ Government portal integration for live scheme and subsidy updates
+- 🤖 Advanced AI agents for personalized agricultural recommendations
+- 🛰️ Satellite and IoT-based farm monitoring
+- 💬 Voice-enabled AI assistant for farmers
+- 📊 Predictive analytics for crop yield estimation
+
+---
+
+## 👩‍💻 Developed By
+
+### Ankita Ghavate
