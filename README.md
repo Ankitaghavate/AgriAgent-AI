@@ -56,6 +56,8 @@ With structured farm inputs and a **knowledge base of 100+ crops and schemes**, 
 | **Deployment** | Cloud-ready with environment variable configuration ☁️ |
 
 ---
+ ## Live demo link 🌐 https://agri-agent-ai--AnkitaGhavate.replit.app
+---
 
 ## 🚀 Installation & Setup
 
