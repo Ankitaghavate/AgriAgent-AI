@@ -22,10 +22,8 @@ With structured farm inputs and a **knowledge base of 100+ crops and schemes**, 
 
 - **Profiling Agent 📝** – Collects and processes farm and farmer details.  
 - **Subsidy Agent 💰** – Identifies eligible government schemes and subsidies.  
-- **Insurance Agent 🛡️** – Evaluates and recommends crop insurance options.  
-- **Financial Agent 💳** – Suggests suitable loans and financial support programs.  
+- **Insurance Agent 🛡️** – Evaluates and recommends crop insurance options.    
 - **Sustainability Agent 🌱** – Recommends sustainable practices & carbon credit opportunities.  
-- **Climate Agent 🌦️** – Assesses climate-related risks for specific crops and regions.  
 - **Master Agent 🏆** – Aggregates all outputs and generates comprehensive advisory reports.  
 
 ---
